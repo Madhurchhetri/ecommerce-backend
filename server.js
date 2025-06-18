@@ -11,9 +11,8 @@ const middlewares = jsonServer.defaults();
 server.use(cors());
 server.use(bodyParser.json()); // ✅ yeh line stream readable banati hai
 server.use(middlewares);
-server.use("/users", router); // ✅ POST /users ke liye sahi route
-server.use("/orders", router);
-server.use("/products", router);
+server.use(router); // ✅ POST /users ke liye sahi route
+
 
 // ✅ Port setup
 const port = process.env.PORT || 5000;
